@@ -7,6 +7,10 @@
   width: 20%;
   margin: auto;
   display: inline-block;
+  transition: 2s;
+}
+.transform-demo > div:hover{
+  transform: translateX(150px) scale(1.5);
 }
 
 /****************************************
@@ -18,11 +22,14 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
-
+  transition: 5s;
 }
 
 .transition-demo img:hover {
-
+  filter: none;
+  transform: rotate(360deg) scale(1.5);
+  border: 1px solid black;
+  border-radius: 15px;
 }
 
 /****************************************
@@ -35,11 +42,32 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
-
+  animation: sale-bar 10s infinite;
 }
 
 @keyframes sale-bar {
   0% { background-color: lightgreen; width: 450px }
+  25% { background-color: purple; width: 350px;}
+  50% { background-color: yellow; width: 250px;}
   75% { background-color: #FF033E; width: 125x }
   100% { background-color: crimson; width: 10px }
+}
+
+section{
+  background: red;
+  height: 400px;
+  width: 400px;
+}
+.inner-div{
+  background: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  animation: pong-div 5s infinite;
+}
+@keyframes pong-div {
+  0% { transform: translateX(0) translateY(0);}
+  25% { transform: translateY(340px) translateX(40px) scale(5); background: white;}
+  50% { transform: translateX(290px) translateY(290px) scale(10); background: teal;}
+  75% { transform: translateX(240px) translateY(140px) scale(15); background: black;}
 }
